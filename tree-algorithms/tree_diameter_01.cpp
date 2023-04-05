@@ -28,8 +28,8 @@ void enter(){
 }
 void dfs(int u, int par){
 for(int v:adj[u])
-    if (v!=par)
     {
+    if (v==par) continue;
     dfs(v,u);
     int _old = toleaf[u], _new = toleaf[v]+1;
     toleaf[u] = max(toleaf[u],toleaf[v]+1);     //_old: khoảng cách xa nhất từ u về nút lá bên trái
