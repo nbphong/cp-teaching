@@ -12,8 +12,8 @@
 #define pll pair<long long, long long>
 #define ll long long
 using namespace std;
-int n, toleaf[MAXN],maxlen[MAXN];
-vector<int> adj[MAXN];
+int n, toleaf[MAXN],maxlen[MAXN];               //toleaf[u]: khoảng cách từ u đến nút lá xa nhất ; 
+vector<int> adj[MAXN];                          //maxlen[u]: khoảng cách xa nhất giữa 2 nút con của u
 //---------------------------------------------
 void enter(){
     ios::sync_with_stdio(false); cin.tie(NULL);
@@ -32,8 +32,8 @@ for(int v:adj[u])
     {
     dfs(v,u);
     int _old = toleaf[u], _new = toleaf[v]+1;
-    toleaf[u] = max(toleaf[u],toleaf[v]+1);
-    maxlen[u] = max(maxlen[u],_old + _new);
+    toleaf[u] = max(toleaf[u],toleaf[v]+1);     //_old: khoảng cách xa nhất từ u về nút lá bên trái
+    maxlen[u] = max(maxlen[u],_old + _new);     //_new: khoảng cách xa nhất từ u về nút lá trong nhánh hiện thời đang xét
     }
 }
 
