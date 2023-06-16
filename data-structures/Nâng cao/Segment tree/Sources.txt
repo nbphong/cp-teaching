@@ -1,0 +1,1 @@
+Segment tree: https://www.enjoyalgorithms.com/blog/segment-trees-data-structure-part-2
