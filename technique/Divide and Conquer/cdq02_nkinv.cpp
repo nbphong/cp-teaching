@@ -16,11 +16,12 @@ int ans ;
 void solve(int L, int R)
 {
     if(L == R) return ;
-    int mid = (L+R)>>1 ;
+    int mid = (L+R)>>1 ;        
     solve(L,mid) ;
-    sort(a+L,a+mid+1) ;
-    FORU(i,mid+1,R)
-    {
+    sort(a+L,a+mid+1);      //Các phần tử a[L]..a[mid] tương ứng với thao tác insert và mỗi phần tử a[mid+1]..a[R] tương ứng với 1 phép query
+    FORU(i,mid+1,R)         //Câu hỏi: tại sao lại đặt solve(L,mid) lên trên-> Lý do là khi thực hiện các query bên phải ta cần phải biết kết quả của tất cả
+    {                       //các query trước đó. Nói cách khác là các query cần được thực hiện theo thứ tự từ trái qua phải. 
+                            //Cũng có thể viết lại thành int solve(l,r) và lúc tổng hợp thì sum lại
         int d = upper_bound(&a[L],&a[mid+1],a[i])-&a[0] ;
         ans += mid-d +1;
     }
