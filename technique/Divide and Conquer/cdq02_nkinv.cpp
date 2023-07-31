@@ -18,14 +18,13 @@ void solve(int L, int R)
     if(L == R) return ;
     int mid = (L+R)>>1 ;
     solve(L,mid) ;
+    sort(a+L,a+mid+1) ;
     FORU(i,mid+1,R)
     {
         int d = upper_bound(&a[L],&a[mid+1],a[i])-&a[0] ;
         ans += mid-d +1;
     }
     solve(mid+1,R) ;
-    sort(a+L,a+R+1) ;
-    return ;
 }
 int main()
 {
