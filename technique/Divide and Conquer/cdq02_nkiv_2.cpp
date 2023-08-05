@@ -1,4 +1,4 @@
-//Lời giải bài NKINV bằng kỹ thuật CDQ - Author: Nguyen Bang Phong - Độ phức tạp n*logn
+//Lời giải bài NKINV bằng kỹ thuật CDQ - Author: Nguyen Bang Phong - Độ phức tạp n*logn.
 //Tận dụng kỹ thuật merge-Sort, khi chia [l;r] thành 2 dãy thì mỗi bên được xếp tăng dần. Khi đó, quá trình merge diễn ra bằng cách cho 2 con trỏ i,j chay song song
 //nếu a[j] <a[i] nghĩa là từ a[i]..mid đều là số lớn hơn a[j], nên ans+=mid-i+1 (tương tự phép truy vấn upper_bound) và xét a[j] kế tiếp
 //ngược lại thì tăng i vì a[i]<=a[j] thì không thu được thêm nghịch thế.
