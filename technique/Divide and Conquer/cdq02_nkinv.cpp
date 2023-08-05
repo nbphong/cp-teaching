@@ -1,4 +1,4 @@
-//Lời giải bài NKINV bằng kỹ thuật CDQ - Author: Thang Nguyen - Chuyen tin 2022-2024 - Độ phức tạp: n*logn*logn
+//Lời giải bài NKINV bằng kỹ thuật CDQ - Author: Thang Nguyen - Chuyen tin 2022-2024 
 #include <bits/stdc++.h>
 #define fi first
 #define se second
