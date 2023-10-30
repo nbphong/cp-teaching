@@ -29,7 +29,7 @@ void enter(){
         par[i+1]=x;
     }
 }
-void getsz(int u,int par){
+void getsz(int u,int par){    // Lấy kích thước các cây gốc u, đồng thời tính độ sâu các nút
 sz[u]=1;
 for(int v:adj[u])
 if (v!=par) {
@@ -40,7 +40,7 @@ if (v!=par) {
     }
 }
 void dfs(int u, int par, int top){
-t_in[u]=++timer; id[timer]=u; tp[u] = top;
+t_in[u]=++timer; id[timer]=u; tp[u] = top;        
 int mx=-1, bigchild = -1;
 for(auto v:adj[u])
     if (v!=par && sz[v]>mx) mx=sz[v], bigchild = v;
